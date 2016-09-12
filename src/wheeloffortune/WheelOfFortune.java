@@ -3,7 +3,7 @@
 * Fall 2016
 * Instructor: Phil O'Connell
 * TODO: DON'T FORGET TO PUT YOUR NAME AND ID
-* Student: Andrew Rooney
+* Student: Andrew Rooney.
 * ID: arr5365
 */
 package wheeloffortune;
