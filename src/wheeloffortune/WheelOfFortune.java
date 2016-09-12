@@ -1,9 +1,9 @@
 /*
 * CMPSC 261, Section 1
 * Fall 2016
-* Instructor: Andrew Rooney
+* Instructor: Phil O'Connell
 * TODO: DON'T FORGET TO PUT YOUR NAME AND ID
-* Student: Stew Dent
+* Student: Andrew Rooney
 * ID: arr5365
 */
 package wheeloffortune;
