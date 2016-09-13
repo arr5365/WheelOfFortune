@@ -20,7 +20,7 @@ public class WheelOfFortune {
       Scanner scanner = new Scanner(System.in);
       
      System.out.println("What do you want to do? \nEnter:1 To Spin the Wheel., \nEnter:2 To buy a Vowel., "
-             + "\nEnter:3 To Solve the Puzzle. or \nEnter:4 To Quit.");
+             + "\nEnter:3 To Solve the Puzzle. \nEnter:4 To Quit.");
      action = scanner.next();
      System.out.println(action);
      if ("1".equals(action)) {
