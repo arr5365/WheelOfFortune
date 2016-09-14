@@ -27,7 +27,7 @@ public class WheelOfFortune {
       Scanner scanner = new Scanner(System.in);
       
      System.out.println("\nWhat do you want to do? \nEnter:1 To Spin the Wheel., \nEnter:2 To buy a Vowel., "
-             + "\nEnter:3 To Solve the Puzzle. \nEnter:4 To Quit. \nEnter 5: QA Tester.");
+             + "\nEnter:3 To Solve the Puzzle. \nEnter 4: QA Tester. \nEnter:5 To Quit. ");
      action = scanner.next();
      System.out.println(action);
      
@@ -45,15 +45,16 @@ public class WheelOfFortune {
          System.out.println(action);
      }
          if ("4".equals(action)) 
-         {action = "You choose to quit.";
-         System.out.println(action);
-         System.exit(0);
-     }
-           if ("5".equals(action)) 
          {action = "QA Test Mode.";
          System.out.println(action);
         
      }
+         if ("5".equals(action)) 
+         {action = "You choose to quit.";
+         System.out.println(action);
+         System.exit(0);
+     }
+       
          
          action();
      }
