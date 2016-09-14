@@ -11,7 +11,9 @@ package wheeloffortune;
 import java.util.Scanner;
 
 public class WheelOfFortune {
-
+      String action;
+      String letter;
+      Scanner scanner = new Scanner(System.in);
   /**
    * @param args the command line arguments
    */
@@ -24,7 +26,7 @@ public class WheelOfFortune {
       String letter;
       Scanner scanner = new Scanner(System.in);
       
-     System.out.println("What do you want to do? \nEnter:1 To Spin the Wheel., \nEnter:2 To buy a Vowel., "
+     System.out.println("\nWhat do you want to do? \nEnter:1 To Spin the Wheel., \nEnter:2 To buy a Vowel., "
              + "\nEnter:3 To Solve the Puzzle. \nEnter:4 To Quit.");
      action = scanner.next();
      System.out.println(action);
@@ -33,11 +35,22 @@ public class WheelOfFortune {
          if ("1".equals(action)) {
          action = "You choose to spin the wheel.";
          System.out.println(action);
-         
-     }
+         System.out.println("Choose a letter:");
+         letter = scanner.next();
+         if (letter.matches("[A-z]")){
+         System.out.println("You choose the letter:"+ letter);
+        }
+         else{
+             System.out.println("Invalid letter, try again");
+             action();
+         }
+                 
          if ("2".equals(action)){ 
          action = "You choose to buy a vowel.";
          System.out.println(action);
+         System.out.println("What vowel are you going to buy?:");
+         letter = scanner.next();
+         System.out.println("You choose to buy:" + letter);
      }
          if ("3".equals(action)){ 
          action = "You choose to solve the puzzle.";
@@ -52,6 +65,6 @@ public class WheelOfFortune {
      }
       
   }
-  
+  }
   
 }
