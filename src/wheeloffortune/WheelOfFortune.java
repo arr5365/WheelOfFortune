@@ -32,20 +32,7 @@ public class WheelOfFortune {
      System.out.println(action);
      
      while ((action != "0")){
-         if ("1".equals(action)) {
-         action = "You choose to spin the wheel.";
-         System.out.println(action);
-         System.out.println("Choose a letter:");
-         letter = scanner.next();
-            if (letter.matches("[A-z]")){
-                System.out.println("You choose the letter:"+ letter);
-                action();
-                }
-                else{
-                 System.out.println("Invalid letter, try again");
-                   action();
-                    }
-         }
+        
          if ("2".equals(action)){ 
          action = "You choose to buy a vowel.";
          System.out.println(action);
