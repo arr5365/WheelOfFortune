@@ -42,12 +42,15 @@ public class WheelOfFortune {
      System.out.println(action);
 //     Here if the user input does not equal 0 it will then go through the following loop. 
      while ((action != "0")){
+//         if the user inputs 1, it go through the following if statement.
+//         Since the first action is to spin the wheel this if statement calls the WheelSpin() method below to get a random value.
          if ("1".equals(action)) {
 //         action = "You choose to spin the wheel.";
 //         System.out.println(action);
          wheelSpin();
          System.out.println("Choose a letter:");
          letter = scanner.next();
+//         Below checks the users input, only allows for letter input.
             if (letter.matches("[A-z]")){
                 System.out.println("You choose the letter:"+ letter);
                 action();
@@ -57,6 +60,7 @@ public class WheelOfFortune {
                    action();
                     }
          }
+//         
          if ("2".equals(action)){ 
 //         action = "You choose to buy a vowel.";
 //         System.out.println(action);
