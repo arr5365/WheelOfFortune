@@ -39,13 +39,12 @@ public class WheelOfFortune {
              + "9. Test letter input\n"
              + "Enter choice:    ");
      action = scanner.next();
-     System.out.println(action);
 //     Here if the user input does not equal 0 it will then go through the following loop. 
      while ((action != "0")){
 //         if the user inputs 1, it go through the following if statement.
 //         Since the first action is to spin the wheel this if statement calls the WheelSpin() method below to get a random value.
          if ("1".equals(action)) {
-//         action = "You choose to spin the wheel.";
+         action = "You choose to spin the wheel.";
 //         System.out.println(action);
          wheelSpin();
          System.out.println("Choose a letter:");
@@ -59,29 +58,31 @@ public class WheelOfFortune {
                  System.out.println("Invalid letter, try again");
                    action();
                     }
-         }
-//         
+         }     
+//         If user enters 2, they are asked which vowel they want to buy. Currently this does nothing and will be dealt with later.
          if ("2".equals(action)){ 
-//         action = "You choose to buy a vowel.";
+         action = "You choose to buy a vowel.";
 //         System.out.println(action);
          System.out.println("What vowel are you going to buy?:");
          letter = scanner.next();
          System.out.println("You choose to buy:" + letter);
      }
+//      If the user inputs 3, they will be allowed to solve the puzzle. Currently this does nothing and will be dealt with later.   
          if ("3".equals(action)){ 
-//         action = "You choose to solve the puzzle.";
+         action = "You choose to solve the puzzle.";
 //         System.out.println(action);
      }
-         
+//         If the user enter 4, they quit the application.
            if ("4".equals(action)) 
-         {action = "QA Test Mode.";
-         System.out.println(action);
-        
-     }
-           if ("9".equals(action)) 
          {action = "You choose to quit.";
-         System.out.println(action);
+//         System.out.println(action);
          System.exit(0);
+     }
+//           This mode is meant for QA testers to make sure the game works properly
+           if ("9".equals(action)) 
+         {action = "QA Test Mode.";
+//         System.out.println(action);
+        
      }
         
          action();
