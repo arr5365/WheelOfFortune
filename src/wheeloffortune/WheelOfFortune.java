@@ -9,6 +9,8 @@
 package wheeloffortune;
 
 import java.util.Scanner;
+import java.util.Random;
+
 
 public class WheelOfFortune {
       String action;
@@ -24,6 +26,7 @@ public class WheelOfFortune {
   public static void action(){
       String action;
       String letter;
+      
       Scanner scanner = new Scanner(System.in);
       
      System.out.println("                   ======================\n    "
@@ -37,11 +40,12 @@ public class WheelOfFortune {
              + "Enter choice:    ");
      action = scanner.next();
      System.out.println(action);
-     
+//     Here if the user input does not equal 0 it will then go through the following loop. 
      while ((action != "0")){
          if ("1".equals(action)) {
-         action = "You choose to spin the wheel.";
-         System.out.println(action);
+//         action = "You choose to spin the wheel.";
+//         System.out.println(action);
+         wheelSpin();
          System.out.println("Choose a letter:");
          letter = scanner.next();
             if (letter.matches("[A-z]")){
@@ -54,15 +58,15 @@ public class WheelOfFortune {
                     }
          }
          if ("2".equals(action)){ 
-         action = "You choose to buy a vowel.";
-         System.out.println(action);
+//         action = "You choose to buy a vowel.";
+//         System.out.println(action);
          System.out.println("What vowel are you going to buy?:");
          letter = scanner.next();
          System.out.println("You choose to buy:" + letter);
      }
          if ("3".equals(action)){ 
-         action = "You choose to solve the puzzle.";
-         System.out.println(action);
+//         action = "You choose to solve the puzzle.";
+//         System.out.println(action);
      }
          
            if ("4".equals(action)) 
@@ -70,7 +74,7 @@ public class WheelOfFortune {
          System.out.println(action);
         
      }
-           if ("5".equals(action)) 
+           if ("9".equals(action)) 
          {action = "You choose to quit.";
          System.out.println(action);
          System.exit(0);
@@ -78,8 +82,18 @@ public class WheelOfFortune {
         
          action();
      }
-      
-  }
-  }
   
+  }
+//  Here I created a wheelSpin method. Which, I listed the wheel values in an array. 
+//  Then I created a random variable which goes through the array and picks a value at random.
+//  This value is then showed to the user. No need to add values yet. Not keeping track of 'money won'.
+  public static void wheelSpin(){
+      String [] wheelValues = {"$300","$300","$300","$300","$300","$350","$400",
+          "$400","$450","$500","$500","$500","$550","$600","$600","$600","$700","$800"
+              + "$800","$900","$900","$5000","BANKRUPT", "LOSE A TURN"};
+      Random randValue = new Random();
+      int index = randValue.nextInt(wheelValues.length);
+      System.out.println("You landed on:" + wheelValues[index]);
 
+    }
+  }
