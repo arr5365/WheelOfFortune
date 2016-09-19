@@ -26,8 +26,15 @@ public class WheelOfFortune {
       String letter;
       Scanner scanner = new Scanner(System.in);
       
-     System.out.println("\nWhat do you want to do? \nEnter:1 To Spin the Wheel., \nEnter:2 To buy a Vowel., "
-             + "\nEnter:3 To Solve the Puzzle.  \nEnter 4: QA Tester. \nEnter:5 To Quit.");
+     System.out.println("                   ======================\n    "
+             + "               =  Wheel Of Fortune  =\n    "
+             + "               ======================\n"
+             + "1. Spin the wheel\n"
+             + "2. Buy a vowel\n"
+             + "3. Solve the puzzle\n"
+             + "4. Quit\n"
+             + "9. Test letter input\n"
+             + "Enter choice:    ");
      action = scanner.next();
      System.out.println(action);
      
