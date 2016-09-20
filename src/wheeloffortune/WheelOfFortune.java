@@ -107,7 +107,7 @@ public class WheelOfFortune {
 
     }
   public static void createPuzzle(){
-      String puzzle = "can you solve this puzzle, bro";
+      String puzzle = "The quick brown fox jumps over the lazy dog";
 //      char [] stringToCharArray = puzzle.toCharArray();
       String input = " ";
       Scanner guess = new Scanner (System.in);
