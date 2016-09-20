@@ -10,7 +10,7 @@ package wheeloffortune;
 
 import java.util.Scanner;
 import java.util.Random;
-
+import java.util.ArrayList;
 
 public class WheelOfFortune {
       String action;
@@ -38,7 +38,7 @@ public class WheelOfFortune {
              + "4. Quit\n"
              + "9. Test letter input\n"
              + "Enter choice:    ");
-     createPuzzle();
+     
      action = scanner.next();
 //     Here if the user input does not equal 0 it will then go through the following loop. 
      while ((action != "0")){
@@ -47,10 +47,12 @@ public class WheelOfFortune {
 //         if the user inputs 1, it go through the following if statement.
 //         Since the first action is to spin the wheel this if statement calls the WheelSpin() method below to get a random value.
          if ("1".equals(action)) {
+         
          action = "You choose to spin the wheel.";
 //         System.out.println(action);
          wheelSpin();
-         System.out.println("Choose a letter:");
+         createPuzzle();
+//         System.out.println("Choose a letter:");
          letter = scanner.next();
 //         Below checks the users input, only allows for letter input.
             if (letter.matches("[A-z]")){
@@ -105,30 +107,33 @@ public class WheelOfFortune {
 
     }
   public static void createPuzzle(){
-      String [] puzzle = {"Puzzle 1", "Puzzle 2"};
+      String puzzle = "can you solve this puzzle, bro";
+//      char [] stringToCharArray = puzzle.toCharArray();
       String input = " ";
       Scanner guess = new Scanner (System.in);
+//      Random randPuzzle = new Random();
+//      int index = randPuzzle.nextInt(puzzle.length);
       boolean notSolved = true;
       while (notSolved){
           notSolved = false;
-          for (String unvieldLetter : puzzle) {
+          for (char unvieldLetter: puzzle.toCharArray()) {
               if (input.indexOf(unvieldLetter) == -1) {
-                  System.out.print('_');
+                  System.out.print("_ ");
                   notSolved = true;
               }
               else{
                   System.out.print(unvieldLetter);
               }
           }
-          if (! notSolved) {
+          if (! notSolved ) {
               break;
-          }     
-      }
+          }    
       System.out.println("\nEnter a Letter");
       String character = guess.next();
       input += character;
-      Random randValue = new Random();
-      int index = randValue.nextInt(puzzle.length);
+      }
+      
+      
 //      System.out.println('_');
 //      String puzzle = "The quick brown fox jumps pver the lazy dog";
   }
