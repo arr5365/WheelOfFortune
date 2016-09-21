@@ -100,7 +100,7 @@ public class WheelOfFortune {
   public static void wheelSpin(){
       String [] wheelValues = {"$300","$300","$300","$300","$300","$350","$400",
           "$400","$450","$500","$500","$500","$550","$600","$600","$600","$700","$800"
-              + "$800","$900","$900","$5000","BANKRUPT", "LOSE A TURN"};
+              , "$800","$900","$900","$5000","BANKRUPT", "LOSE A TURN"};
       Random randValue = new Random();
       int index = randValue.nextInt(wheelValues.length);
       System.out.println("You landed on:" + wheelValues[index]);
