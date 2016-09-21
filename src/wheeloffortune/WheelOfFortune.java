@@ -99,30 +99,24 @@ public class WheelOfFortune {
 //  This value is then showed to the user. No need to add values yet. Not keeping track of 'money won'.
   public static void wheelSpin(){
       String [] wheelValues = {"$300","$300","$300","$300","$300","$350","$400",
-          "$400","$450","$500","$500","$500","$550","$600","$600","$600","$700","$800",
-               "$800","$900","$900","$5000","BANKRUPT", "LOSE A TURN"};
+          "$400","$450","$500","$500","$500","$550","$600","$600","$600","$700","$800"
+              + "$800","$900","$900","$5000","BANKRUPT", "LOSE A TURN"};
       Random randValue = new Random();
       int index = randValue.nextInt(wheelValues.length);
       System.out.println("You landed on:" + wheelValues[index]);
 
     }
+//  The below method creates the puzzle. And it waits for the users input. As the user enters a letter the puzzle is unvaild one by one.
   public static void createPuzzle(){
-      String [] puzzle = { "The quick brown fox jumps over the lazy dog", "puzzle two puzzle three" };
-      Random randPuzzle = new Random();
-      int index = randPuzzle.nextInt(puzzle.length);
-      
-      for (int count = 0; count < puzzle.length; count++) {
-          String current = puzzle[count];
-          char[] letters = current.toCharArray();
+      String puzzle = "The quick brown fox jumps over the lazy dog";
       String input = " ";
       Scanner guess = new Scanner (System.in);
-      
       boolean notSolved = true;
       while (notSolved){
           notSolved = false;
-          for (char unvieldLetter: letters) {
+          for (char unvieldLetter: puzzle.toCharArray()) {
               if (input.indexOf(unvieldLetter) == -1) {
-                  System.out.print(puzzle[index].replace(unvieldLetter, '_'));
+                  System.out.print("_ ");
                   notSolved = true;
               }
               else{
@@ -136,12 +130,5 @@ public class WheelOfFortune {
       String character = guess.next();
       input += character;
       }
-      
-//      
-////      System.out.println('_');
-////      String puzzle = "The quick brown fox jumps pver the lazy dog";
   }
   }
-}
-
-
