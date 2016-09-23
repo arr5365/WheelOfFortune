@@ -22,7 +22,8 @@ public class WheelOfFortune {
   public static void action(){
       String action;
       String letter;
-      
+      int press = 0;
+      press ++;
       Scanner scanner = new Scanner(System.in);
       
      System.out.println("\n"
@@ -33,6 +34,7 @@ public class WheelOfFortune {
              + "2. Buy a vowel\n"
              + "3. Solve the puzzle\n"
              + "4. Quit\n"
+             + "8. Toggle Puzzle\n"
              + "9. Test letter input\n"
              + "Enter choice:    ");
      
@@ -80,6 +82,14 @@ public class WheelOfFortune {
 
          System.exit(0);
      }
+           String puzzle = "The quick brown fox jumps over the lazy dog";
+           if ("8".equals(action)) // when the user chooses 4, the game quits
+         {
+             System.out.println(puzzle);
+             action();
+               
+          }
+
 //           This mode is meant for QA testers to make sure the game works properly
            if ("9".equals(action)) 
          {action = "QA Test Mode.";
