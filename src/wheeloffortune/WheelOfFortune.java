@@ -119,8 +119,7 @@ public class WheelOfFortune {
              System.out.println("Press 8 again to untoggle");
              num = in.nextInt();
              
-             if(num%2 == 0)
-                 System.out.println(num);
+             
              action();
                
           }
