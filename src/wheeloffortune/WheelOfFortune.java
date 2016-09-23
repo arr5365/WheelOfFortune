@@ -148,7 +148,17 @@ public class WheelOfFortune {
           }
           if (! notSolved ) {
               break;
-          }    
+              
+          } 
+           int num; 
+             Scanner in = new Scanner(System.in);
+             System.out.println("\nPress 8 to show puzzle");
+             num = in.nextInt();
+             
+             if(num%2 == 0)
+                 System.out.println(puzzle);
+             
+             
       System.out.println("\nEnter a Letter");
       String character = guess.next();
       input += character;
