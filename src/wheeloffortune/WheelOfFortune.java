@@ -136,6 +136,7 @@ public class WheelOfFortune {
      System.out.println("\nEnter a Letter");
       String character = guess.next();
       input += character;
+      
       }
       
       
@@ -182,5 +183,7 @@ public class WheelOfFortune {
       String character = guess.next();
       input += character;
       }
+      System.out.println("\n ***You Win!!!!!*** ");
+      System.exit(0);
   }
   }
