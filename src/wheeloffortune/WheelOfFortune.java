@@ -27,7 +27,7 @@ public class WheelOfFortune {
       Scanner scanner = new Scanner(System.in);
       
      System.out.println("\n"
-             + "                  ======================\n    "
+             + "                   ======================\n    "
              + "               =  Wheel Of Fortune  =\n    "
              + "               ======================\n"
              + "1. Spin the wheel\n"
@@ -86,6 +86,21 @@ public class WheelOfFortune {
            if ("8".equals(action)) // when the user chooses 4, the game quits
          {
              System.out.println(puzzle);
+             
+             int num; 
+             Scanner in = new Scanner(System.in);
+             System.out.println("Press 8 again to untoggle");
+             num = in.nextInt();
+             
+             if(num%2 == 0)
+                 System.out.println(num);
+             
+                     
+                     
+                     
+                     
+                     
+                     
              action();
                
           }
