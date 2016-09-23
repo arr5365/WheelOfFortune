@@ -22,9 +22,32 @@ public class WheelOfFortune {
   public static void action(){
       String action;
       String letter;
-      int press = 0;
-      press ++;
       Scanner scanner = new Scanner(System.in);
+      String puzzle = "The quick brown fox jumps over the lazy dog";
+      String input = " ";
+      Scanner guess = new Scanner (System.in);
+      boolean notSolved = true;
+      while (notSolved){
+          notSolved = false;
+          for (char unvieldLetter: puzzle.toCharArray()) {
+
+              if (input.indexOf(unvieldLetter) == -1) {
+                  System.out.print("_ ");
+                  notSolved = true;
+                  
+              }
+              else{
+                  System.out.print(unvieldLetter);
+              }
+          }
+          if (! notSolved ) {
+              break;
+              
+          } 
+           
+             
+             
+      
       
      System.out.println("\n"
              + "                   ======================\n    "
@@ -37,6 +60,8 @@ public class WheelOfFortune {
              + "8. Toggle Puzzle\n"
              + "9. Test letter input\n"
              + "Enter choice:    ");
+     
+     
      
      action = scanner.next();
 //     Here if the user input does not equal 0 it will then go through the following loop. 
@@ -79,10 +104,12 @@ public class WheelOfFortune {
 //         If the user enter 4, they quit the application.
            if ("4".equals(action)) 
          {action = "You choose to quit.";
+         System.out.println(action);
 
          System.exit(0);
      }
-           String puzzle = "The quick brown fox jumps over the lazy dog";
+//           If user inouts 8 in menu it will show them the puzzle. Coud not do this during puzzle solving 
+           
            if ("8".equals(action)) // when the user chooses 4, the game quits
          {
              System.out.println(puzzle);
@@ -94,13 +121,6 @@ public class WheelOfFortune {
              
              if(num%2 == 0)
                  System.out.println(num);
-             
-                     
-                     
-                     
-                     
-                     
-                     
              action();
                
           }
@@ -113,7 +133,12 @@ public class WheelOfFortune {
         
          action();
      }
-  
+     System.out.println("\nEnter a Letter");
+      String character = guess.next();
+      input += character;
+      }
+      
+      
   }
 //  Here I created a wheelSpin method. Which, I listed the wheel values in an array. 
 //  Then I created a random variable which goes through the array and picks a value at random.
@@ -150,13 +175,7 @@ public class WheelOfFortune {
               break;
               
           } 
-           int num; 
-             Scanner in = new Scanner(System.in);
-             System.out.println("\nPress 8 to show puzzle");
-             num = in.nextInt();
-             
-             if(num%2 == 0)
-                 System.out.println(puzzle);
+           
              
              
       System.out.println("\nEnter a Letter");
