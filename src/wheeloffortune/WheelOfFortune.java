@@ -26,7 +26,7 @@ public class WheelOfFortune {
       Scanner scanner = new Scanner(System.in);
       
      System.out.println("\n"
-             + "                 ======================\n    "
+             + "                  ======================\n    "
              + "               =  Wheel Of Fortune  =\n    "
              + "               ======================\n"
              + "1. Spin the wheel\n"
@@ -49,6 +49,7 @@ public class WheelOfFortune {
 
          wheelSpin();
          createPuzzle();
+
 
          letter = scanner.next();
 //         Below checks the users input, only allows for letter input.
@@ -110,9 +111,11 @@ public class WheelOfFortune {
       while (notSolved){
           notSolved = false;
           for (char unvieldLetter: puzzle.toCharArray()) {
+
               if (input.indexOf(unvieldLetter) == -1) {
                   System.out.print("_ ");
                   notSolved = true;
+                  
               }
               else{
                   System.out.print(unvieldLetter);
