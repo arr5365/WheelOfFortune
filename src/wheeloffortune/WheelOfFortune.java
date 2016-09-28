@@ -19,6 +19,8 @@ import java.util.Scanner;
 
 public class WheelOfFortune {
 
+    
+  private static int winnings = 0;
   // To read from the keyboard
   private static final Scanner _keyboard = new Scanner(System.in);
 
@@ -75,7 +77,7 @@ public class WheelOfFortune {
 
   // The menu choices
   private static final List<String> _menuChoices = Arrays.asList(
-      "1. Spin the wheel",
+      "\n1. Spin the wheel",
       "2. Buy a vowel",
       "3. Solve the puzzle",
       "4. Quit the game"
@@ -213,7 +215,7 @@ public class WheelOfFortune {
 
       System.out.println(maskPuzzle(puzzle, revealLetters));
       System.out.println();
-
+      System.out.println("Your Winnings are: " + winnings);
       // Loop over the menu choices, and display each one
       for (String menuChoice : _menuChoices) {
         // Skip blank place-holder choices
@@ -252,7 +254,8 @@ public class WheelOfFortune {
           guessedLetters.put(letter, true);
           break;
 
-      
+        case 2:
+            
       }
     }
   }
