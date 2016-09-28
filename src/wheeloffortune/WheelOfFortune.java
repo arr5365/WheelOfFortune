@@ -71,7 +71,11 @@ public class WheelOfFortune {
     // Choose a random index
     int randomWedgeIndex = _random.nextInt(_wedgeCount);
 
-    
+    //Converts the strings in the array to ints and replaces the dollar sign with nothing.
+    //This way the values from the wheel can be stored in winnings
+    //The if else statement checks for the out come of the wheel spin and if the 
+    //user lands on Bankrupt or lose a turn than there score is not calculated.
+    //However, if they land on bankrupt than there winnings is set equal to zero.
     if(_wedges.get(randomWedgeIndex) != "LOSE A TURN" && _wedges.get(randomWedgeIndex) != "BANKRUPT"){
         winnings += Integer.parseInt(_wedges.get(randomWedgeIndex).replace("$", ""));
     }
@@ -225,7 +229,7 @@ public class WheelOfFortune {
 
       System.out.println(maskPuzzle(puzzle, revealLetters));
       System.out.println();
-      System.out.println("Your Winnings are: " + winnings);
+      System.out.println("Your Winnings are: $" + winnings);
       // Loop over the menu choices, and display each one
       for (String menuChoice : _menuChoices) {
         // Skip blank place-holder choices
