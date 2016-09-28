@@ -71,6 +71,16 @@ public class WheelOfFortune {
     // Choose a random index
     int randomWedgeIndex = _random.nextInt(_wedgeCount);
 
+    
+    if(_wedges.get(randomWedgeIndex) != "LOSE A TURN" && _wedges.get(randomWedgeIndex) != "BANKRUPT"){
+        winnings += Integer.parseInt(_wedges.get(randomWedgeIndex).replace("$", ""));
+    }
+    else if (_wedges.get(randomWedgeIndex) == "BANKRUPT")
+    {
+        winnings = 0;
+    }
+    
+    
     // Return the corresponding wedge
     return _wedges.get(randomWedgeIndex);
   }
