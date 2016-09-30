@@ -213,6 +213,7 @@ public class WheelOfFortune {
   private static void gameMenu() {
     // Choice from the menu
     int choice = 0;
+    
 
     // Line entered from keyboard
     String line = "";
@@ -233,6 +234,7 @@ public class WheelOfFortune {
       System.out.println(maskPuzzle(puzzle, revealLetters));
       System.out.println();
       System.out.println("Your Winnings are: $" + winnings);
+     
       // Loop over the menu choices, and display each one
       for (String menuChoice : _menuChoices) {
         // Skip blank place-holder choices
@@ -256,8 +258,10 @@ public class WheelOfFortune {
         System.out.println("Not a menu choice");
         continue;
       }
+       
 
       System.out.println("You chose: " + _menuChoices.get(choice - 1));
+      char letter = inputLetter();
       switch (choice) {
         case _quitChoiceNumber:
           // This will allow us to leave the menu loop
@@ -266,25 +270,36 @@ public class WheelOfFortune {
 
         case 1: // Spin the wheel
           System.out.println("You landed on: " + chooseRandomWedgeValue());
-          char letter = inputLetter();
           
-//          if(_wedges.get(randomWedgeIndex) != "LOSE A TURN" && _wedges.get(randomWedgeIndex) != "BANKRUPT"){
+// 
           if(letter=='a' || letter=='A' || letter=='e' || letter=='E' ||
         letter=='i' || letter=='I' || letter=='o' || letter=='O' ||
         letter=='u' || letter=='U')
         {
-            System.out.print("This is a Vowel");
+            System.out.print("\nCan only buy Vowels, sorry.");
         }
         else
         {
-            System.out.print("This is not a Vowel");
             guessedLetters.put(letter, true);
         }
           
-          System.out.println("Your letter is: " + letter);
+          System.out.println("\nYour letter is: " + letter);
           break;
 
         case 2:
+            
+            if(letter=='a' || letter=='A' || letter=='e' || letter=='E' ||
+        letter=='i' || letter=='I' || letter=='o' || letter=='O' ||
+        letter=='u' || letter=='U')
+        {
+            System.out.print("\nYou bought:" + letter);
+            guessedLetters.put(letter, true);
+        }
+        else
+        {
+            System.out.print("\nCan only buy Vowels, sorry.");
+        }
+          break;
             
       }
     }
