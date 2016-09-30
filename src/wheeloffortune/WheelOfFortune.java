@@ -20,6 +20,7 @@ import java.util.Scanner;
 public class WheelOfFortune {
 
   private static char letter;
+  private static char letter2;
   private static int winnings = 0;
   // To read from the keyboard
   private static final Scanner _keyboard = new Scanner(System.in);
@@ -226,7 +227,7 @@ public class WheelOfFortune {
 
     // Repeat the menu until the user chooses to quit
     while (!quit) {
-      System.out.println("                    \n======================");
+      System.out.println("                      ======================");
       System.out.println("                      =  Wheel Of Fortune  =");
       System.out.println("                      ======================");
       System.out.println("                                            ");
@@ -270,41 +271,41 @@ public class WheelOfFortune {
 
         case 1: // Spin the wheel
           System.out.println("You landed on: " + chooseRandomWedgeValue());
-          letter = inputLetter(); // sets the letter variable equal to the users input. 
+          letter = inputLetter(); // sets the letter variable equal to the users input for case 1. 
           if(letter=='a' || letter=='A' || letter=='e' || letter=='E' ||
         letter=='i' || letter=='I' || letter=='o' || letter=='O' ||
         letter=='u' || letter=='U') //This checks to see if the user input a vowel.
         {
-            System.out.print("\nCan only buy Vowels, sorry.\n");//If the user inputs 
+            System.out.print("\nCan only buy Vowels, sorry.\n");//If the user inputs a vowel they get an error message
         }
-        else
+          else //If the user enters a letter that is not a vowel they get the letter is revealed.
         {
-            guessedLetters.put(letter, true);
+            guessedLetters.put(letter, true);//This revels the letter in the puzzle.
         }
           
-          System.out.println("\nYour letter is: " + letter);
+          System.out.println("\nYour letter is: " + letter);//Displays the user what letter they guessed.
           break;
 
-        case 2:
-            letter = inputLetter();
-            if(letter=='a' || letter=='A' || letter=='e' || letter=='E' ||
-        letter=='i' || letter=='I' || letter=='o' || letter=='O' ||
-        letter=='u' || letter=='U')
+        case 2://Buy a vowel
+            letter2 = inputLetter();//Letter2 gets the user input for case 2.
+            if(letter2=='a' || letter2=='A' || letter2=='e' || letter2=='E' ||
+        letter2=='i' || letter2=='I' || letter2=='o' || letter2=='O' ||
+        letter2=='u' || letter2=='U')//This checks to see if the user input a vowel.
         {
-            if(winnings >= 250)
+            if(winnings >= 250)//The user can only buy a vowel if they have more than $250.
             {
-            winnings = winnings - 250;
-            System.out.print("\nYou bought:" + letter +"\n");
-            guessedLetters.put(letter, true);
+            winnings = winnings - 250;//Minuses 250 from users winnings
+            System.out.print("\nYou bought:" + letter2 +"\n");//Tells the user what vowel they bought.
+            guessedLetters.put(letter2, true);//inputs the vowel into the puzzle if it is there
             }
             else
             {
-            System.out.print("\nNot enough money to buy a vowel. They cost $250.");
+            System.out.print("\nNot enough money to buy a vowel. They cost $250.");//Tells the user they don't have enough money.
             }
         }
         else
         {
-            System.out.print("\nCan only buy Vowels, sorry.");
+            System.out.print("\nCan only buy Vowels, sorry.");//Tells user they can only buy vowels.
         }
           break;
             
