@@ -269,12 +269,19 @@ public class WheelOfFortune {
           char letter = inputLetter();
           
 //          if(_wedges.get(randomWedgeIndex) != "LOSE A TURN" && _wedges.get(randomWedgeIndex) != "BANKRUPT"){
-          if(letter == 'A' && letter == 'E' && letter == 'I' && letter == 'O' && letter == 'U'){
-              System.out.println("Can only buy vowels!");
-          }
+          if(letter=='a' || letter=='A' || letter=='e' || letter=='E' ||
+        letter=='i' || letter=='I' || letter=='o' || letter=='O' ||
+        letter=='u' || letter=='U')
+        {
+            System.out.print("This is a Vowel");
+        }
+        else
+        {
+            System.out.print("This is not a Vowel");
+            guessedLetters.put(letter, true);
+        }
           
           System.out.println("Your letter is: " + letter);
-          guessedLetters.put(letter, true);
           break;
 
         case 2:
