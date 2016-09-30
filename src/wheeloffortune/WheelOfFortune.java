@@ -77,7 +77,9 @@ public class WheelOfFortune {
     //user lands on Bankrupt or lose a turn than there score is not calculated.
     //However, if they land on bankrupt than there winnings is set equal to zero.
     if(_wedges.get(randomWedgeIndex) != "LOSE A TURN" && _wedges.get(randomWedgeIndex) != "BANKRUPT"){
+        
         winnings += Integer.parseInt(_wedges.get(randomWedgeIndex).replace("$", ""));
+        
     }
     else if (_wedges.get(randomWedgeIndex) == "BANKRUPT")
     {
@@ -104,7 +106,8 @@ public class WheelOfFortune {
   private static final List<String> _puzzles = Arrays.asList(
       "CAN YOU SOLVE THIS PUZZLE",
       "WHEEL OF FORTUNE",
-      "MADE BY ANDREW"
+      "MADE BY ANDREW",
+      "SUPERCALIFRAGILISTICEXPIALIDOCIOUS"
   );
 
   /*
@@ -264,6 +267,12 @@ public class WheelOfFortune {
         case 1: // Spin the wheel
           System.out.println("You landed on: " + chooseRandomWedgeValue());
           char letter = inputLetter();
+          
+//          if(_wedges.get(randomWedgeIndex) != "LOSE A TURN" && _wedges.get(randomWedgeIndex) != "BANKRUPT"){
+          if(letter == 'A' && letter == 'E' && letter == 'I' && letter == 'O' && letter == 'U'){
+              System.out.println("Can only buy vowels!");
+          }
+          
           System.out.println("Your letter is: " + letter);
           guessedLetters.put(letter, true);
           break;
