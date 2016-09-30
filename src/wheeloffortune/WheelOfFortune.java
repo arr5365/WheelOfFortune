@@ -19,7 +19,7 @@ import java.util.Scanner;
 
 public class WheelOfFortune {
 
-    
+  private static char letter;
   private static int winnings = 0;
   // To read from the keyboard
   private static final Scanner _keyboard = new Scanner(System.in);
@@ -226,7 +226,7 @@ public class WheelOfFortune {
 
     // Repeat the menu until the user chooses to quit
     while (!quit) {
-      System.out.println("                      ======================");
+      System.out.println("                    \n======================");
       System.out.println("                      =  Wheel Of Fortune  =");
       System.out.println("                      ======================");
       System.out.println("                                            ");
@@ -261,7 +261,7 @@ public class WheelOfFortune {
        
 
       System.out.println("You chose: " + _menuChoices.get(choice - 1));
-      char letter = inputLetter();
+      
       switch (choice) {
         case _quitChoiceNumber:
           // This will allow us to leave the menu loop
@@ -270,13 +270,13 @@ public class WheelOfFortune {
 
         case 1: // Spin the wheel
           System.out.println("You landed on: " + chooseRandomWedgeValue());
-          
+          letter = inputLetter();
 // 
           if(letter=='a' || letter=='A' || letter=='e' || letter=='E' ||
         letter=='i' || letter=='I' || letter=='o' || letter=='O' ||
         letter=='u' || letter=='U')
         {
-            System.out.print("\nCan only buy Vowels, sorry.");
+            System.out.print("\nCan only buy Vowels, sorry.\n");
         }
         else
         {
@@ -287,13 +287,21 @@ public class WheelOfFortune {
           break;
 
         case 2:
-            
+            letter = inputLetter();
             if(letter=='a' || letter=='A' || letter=='e' || letter=='E' ||
         letter=='i' || letter=='I' || letter=='o' || letter=='O' ||
         letter=='u' || letter=='U')
         {
+            if(winnings >= 250)
+            {
+            winnings = winnings - 250;
             System.out.print("\nYou bought:" + letter);
             guessedLetters.put(letter, true);
+            }
+            else
+            {
+            System.out.print("\nNot enough money to buy a vowel. They cost $250.");
+            }
         }
         else
         {
