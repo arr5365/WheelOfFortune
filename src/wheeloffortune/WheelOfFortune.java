@@ -270,13 +270,12 @@ public class WheelOfFortune {
 
         case 1: // Spin the wheel
           System.out.println("You landed on: " + chooseRandomWedgeValue());
-          letter = inputLetter();
-// 
+          letter = inputLetter(); // sets the letter variable equal to the users input. 
           if(letter=='a' || letter=='A' || letter=='e' || letter=='E' ||
         letter=='i' || letter=='I' || letter=='o' || letter=='O' ||
-        letter=='u' || letter=='U')
+        letter=='u' || letter=='U') //This checks to see if the user input a vowel.
         {
-            System.out.print("\nCan only buy Vowels, sorry.\n");
+            System.out.print("\nCan only buy Vowels, sorry.\n");//If the user inputs 
         }
         else
         {
@@ -295,7 +294,7 @@ public class WheelOfFortune {
             if(winnings >= 250)
             {
             winnings = winnings - 250;
-            System.out.print("\nYou bought:" + letter);
+            System.out.print("\nYou bought:" + letter +"\n");
             guessedLetters.put(letter, true);
             }
             else
