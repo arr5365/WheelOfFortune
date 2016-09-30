@@ -309,6 +309,8 @@ public class WheelOfFortune {
         }
           break;
             
+        case 3://Solve puzzle
+            
       }
     }
   }
